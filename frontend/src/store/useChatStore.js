@@ -2,6 +2,7 @@ import { create } from "zustand";
 
 import { axiosInstanace } from "../lib/axios";
 import handleApiError from "../utils/handleApiError";
+import { useAuthStore } from "./useAuthStore.js";
 
 export const useChatStore = create((set, get) => ({
   messages: [],
@@ -48,6 +49,28 @@ export const useChatStore = create((set, get) => ({
     }
   },
 
-  //   todo:optimize later
+  subscribeToMessages: () => {
+    const { selectedUser } = get();
+    if (!selectedUser) return;
+
+    //todo: optimize this one later
+    const socket = useAuthStore.getState().socket;
+
+    socket.on("newMessage", (newMessage) => {
+      const isMessageSentFromSelectedUser =
+        newMessage.senderId === selectedUser?._id;
+      if (!isMessageSentFromSelectedUser) return;
+
+      set({
+        messages: [...get().messages, newMessage],
+      });
+    });
+  },
+
+  unsubscribeFromMessages: () => {
+    const socket = useAuthStore.getState().socket;
+    socket.off("newMessage");
+  },
+
   setSelectedUser: (selectedUser) => set({ selectedUser }),
 }));
