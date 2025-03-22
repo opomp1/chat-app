@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 
-import Navbar from "./components/Navbar";
+import Navbar from "./components/nav/Navbar";
 import HomePage from "./pages/HomePage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";

@@ -1,7 +1,7 @@
 import { Send } from "lucide-react";
 import { THEMES } from "../constants";
 import { useThemeStore } from "../store/useThemeStore";
-import MessagePreview from "../components/MessagePreview";
+import MessagePreview from "../components/user/MessagePreview";
 
 const SettingPage = () => {
   const { theme, setTheme } = useThemeStore();

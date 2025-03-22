@@ -12,8 +12,8 @@ import {
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
-import FormInput from "../components/FormInput";
-import AuthImagePattern from "../components/AuthImagePattern";
+import FormInput from "../components/auth/FormInput";
+import AuthImagePattern from "../components/auth/AuthImagePattern";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
