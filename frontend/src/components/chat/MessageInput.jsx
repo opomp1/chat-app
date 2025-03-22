@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-import { useChatStore } from "../store/useChatStore";
+import { useChatStore } from "../../store/useChatStore";
 import { FileOutput, Image, Send, X } from "lucide-react";
 import toast from "react-hot-toast";
 
@@ -77,7 +77,7 @@ const MessageInput = () => {
         <div className="flex-1 flex gap-2">
           <input
             type="text"
-            className="w-full input input-bordered rounded-lg input-sm sm:input-md"
+            className="w-full input input-bordered rounded-lg text-base"
             placeholder="Type a message..."
             value={text}
             onChange={(e) => setText(e.target.value)}
@@ -92,7 +92,7 @@ const MessageInput = () => {
 
           <button
             type="button"
-            className={`hidden sm:flex btn btn-circle
+            className={`flex btn btn-circle
                      ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
             onClick={() => fileInputRef.current?.click()}
           >
