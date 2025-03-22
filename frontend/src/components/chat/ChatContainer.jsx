@@ -69,23 +69,24 @@ const ChatContainer = () => {
               <div className="chat-image avatar">
                 <div className="size-10 rounded-full border">
                   <img
-                    src={
-                      message.senderId === authUser._id
-                        ? authUser.profilePic || "/avatar.png"
-                        : selectedUser.profilePic || "/avatar.png"
-                    }
+                    src={selectedUser.profilePic || "/avatar.png"}
                     alt="Profile Picture"
                   />
                 </div>
               </div>
             )}
-
             <div className="chat-header mb-1">
               <time className="text-xs opacity-50 ml-1">
                 {formatMessageTime(message.createdAt)}
               </time>
             </div>
-            <div className="chat-bubble flex flex-col break-words max-w-[80%] sm:max-w-[60%]">
+            <div
+              className={`chat-bubble flex flex-col break-words max-w-[80%] sm:max-w-[60%] ${
+                message.senderId === authUser._id
+                  ? "bg-primary text-primary-content"
+                  : "bg-base-200 text-base-content"
+              }`}
+            >
               {message.image && (
                 <img
                   src={message.image}
