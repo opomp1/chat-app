@@ -14,7 +14,7 @@ const FormInput = ({ value, onChange, type }) => {
           </div>
           <input
             type="text"
-            className={`input input-bordered w-full pl-10`}
+            className={`input input-bordered w-full pl-10 text-base`}
             placeholder="Tirawat Owen"
             value={value}
             onChange={onChange}
@@ -36,7 +36,7 @@ const FormInput = ({ value, onChange, type }) => {
           </div>
           <input
             type="email"
-            className={`input input-bordered w-full pl-10`}
+            className={`input input-bordered w-full pl-10 text-base`}
             placeholder="myemail@mail.com"
             value={value}
             onChange={onChange}

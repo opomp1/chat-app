@@ -15,12 +15,12 @@ const SettingPage = () => {
           </p>
         </div>
 
-        <div className="grid grild-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
+        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
           {THEMES.map((t) => (
             <button
               key={t}
               className={`group flex flex-col items-center gap-1.5 p-2 rounded-lg transition-colors ${
-                theme === t ? "bg-base-200" : "hover:bg-base-200/50"
+                theme === t ? "bg-base-300 shadow-md" : "hover:bg-base-200/50"
               }`}
               onClick={() => setTheme(t)}
             >
@@ -35,7 +35,7 @@ const SettingPage = () => {
                   <div className="rounded bg-neutral"></div>
                 </div>
               </div>
-              <span className="text-[11px], font-medium, truncate, w-full text-center">
+              <span className="text-[10px] sm:text-[11px] font-medium truncate w-full text-center">
                 {t.charAt(0).toUpperCase() + t.slice(1)}
               </span>
             </button>

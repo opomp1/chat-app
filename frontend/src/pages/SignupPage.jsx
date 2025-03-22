@@ -85,7 +85,7 @@ const SignupPage = () => {
                 </div>
                 <input
                   type={showPassword ? "text" : "password"}
-                  className={`input input-bordered w-full pl-10`}
+                  className={`input input-bordered w-full pl-10 text-base`}
                   placeholder="********"
                   value={formData.password}
                   onChange={(e) =>
