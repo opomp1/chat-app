@@ -58,6 +58,7 @@ const SignupPage = () => {
               </p>
             </div>
           </div>
+
           <form onSubmit={handleSubmit} className="space-y-6">
             <FormInput
               type="fullname"
@@ -66,7 +67,6 @@ const SignupPage = () => {
                 setFormdata({ ...formData, fullName: e.target.value })
               }
             />
-
             <FormInput
               type="email"
               value={formData.email}
@@ -74,37 +74,13 @@ const SignupPage = () => {
                 setFormdata({ ...formData, email: e.target.value })
               }
             />
-
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text font-medium">Passowrd</span>
-              </label>
-              <div className="relative">
-                <div className="absolute z-10 inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className="size-5 text-base-content/40" />
-                </div>
-                <input
-                  type={showPassword ? "text" : "password"}
-                  className={`input input-bordered w-full pl-10 text-base`}
-                  placeholder="********"
-                  value={formData.password}
-                  onChange={(e) =>
-                    setFormdata({ ...formData, password: e.target.value })
-                  }
-                />
-                <button
-                  type="button"
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center hover:cursor-pointer"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
-                  {showPassword ? (
-                    <EyeOff className="size-5 text-base-content/40" />
-                  ) : (
-                    <Eye className="size-5 text-base-content/40" />
-                  )}
-                </button>
-              </div>
-            </div>
+            <FormInput
+              type="password"
+              value={formData.password}
+              onChange={(e) =>
+                setFormdata({ ...formData, password: e.target.value })
+              }
+            />
 
             <button
               type="submit"
