@@ -16,7 +16,6 @@ import FormInput from "../components/auth/FormInput";
 import AuthImagePattern from "../components/auth/AuthImagePattern";
 
 const SignupPage = () => {
-  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormdata] = useState({
     fullName: "",
     email: "",
