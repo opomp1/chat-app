@@ -22,7 +22,11 @@ const Sidebar = () => {
   if (isUsersLoading) return <SidebarSkeleton />;
 
   return (
-    <aside className="h-full w-20 lg:w-72 border-r border-base-300 flex flex-col transition-all duration-200">
+    <aside
+      className={`lg:w-72 border-r border-base-300 ${
+        selectedUser ? "w-0 h-0 sm:h-full sm:w-20 sm:flex" : "flex h-full w-20"
+      } flex-col transition-all duration-200`}
+    >
       <div className="border-b border-base-300 w-full p-5">
         <div className="flex items-center gap-2">
           <Users className="size-6" />
