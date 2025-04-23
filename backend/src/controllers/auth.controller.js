@@ -20,12 +20,10 @@ export const signup = async (req, res) => {
     const emailLower = email.toLowerCase();
     const user = await User.findOne({ email: emailLower });
     if (user) {
-      return res
-        .status(400)
-        .json({
-          message:
-            "This email is already registered. Please log in or use a different email.",
-        });
+      return res.status(400).json({
+        message:
+          "This email is already registered. Please log in or use a different email.",
+      });
     }
 
     // hash password
@@ -113,7 +111,10 @@ export const updateProfile = async (req, res) => {
         profilePic: uploadResponse.secure_url,
       },
       // {new: true} to update the document immedietly
-      { new: true }
+      {
+        new: true,
+        //  timestamps: false
+      }
     );
 
     res.status(200).json(updatedUser);
