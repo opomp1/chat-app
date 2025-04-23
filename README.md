@@ -27,7 +27,7 @@ Make sure you have **Node.js**, **MongoDB**, and **npm** installed.
 
 ```bash
 git clone https://github.com/opomp1/chat-app.git
-cd chat-app
+cd chitchat
 ```
 
 ### 2. Install Frontend Dependencies
