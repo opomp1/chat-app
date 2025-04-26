@@ -17,8 +17,8 @@ import AuthImagePattern from "../components/auth/AuthImagePattern";
 
 const LoginPage = () => {
   const [formData, setFormdata] = useState({
-    email: "",
-    password: "",
+    email: "demo@chitchat.com",
+    password: "test1234",
   });
 
   const { login, isLogginIn } = useAuthStore();
