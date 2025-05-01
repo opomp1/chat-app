@@ -19,6 +19,20 @@
 - **Authentication:** JWT
 - **File Uploads:** Cloudinary
 
+## 🧪 Demo Accounts
+
+Use these demo credentials to explore the app:
+
+### 👩‍💼 User Login
+- **Email**: demo@chitchat.com
+- **Password**: test1234
+
+Access admin dashboard, manage products, and view sales insights.
+
+👉 [Live Demo](https://chat-app-hdy2.onrender.com)
+
+---
+
 ## 📦 Installation
 
 Make sure you have **Node.js**, **MongoDB**, and **npm** installed.
